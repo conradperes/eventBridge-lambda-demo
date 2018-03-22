@@ -56,9 +56,14 @@ public class AqueceAlgoritmos implements Cloneable {
 			print(exercicio2IdentificaCampeao(candidatos));
 			break;
 		case EXERCICIO3:
-			double numeros[] = new double[sc.nextInt()];
+//			double numeros[] = new double[sc.nextInt()];
+//			for (int i = 0; i < numeros.length; i++) {
+//				numeros[i] = sc.nextDouble();
+//			}
+			String numeros[ ] = new String[sc.nextInt()];
 			for (int i = 0; i < numeros.length; i++) {
-				numeros[i] = sc.nextDouble();
+				numeros[i]=sc.next();
+				
 			}
 			exercicio3Calculos(numeros.length, numeros);
 			break;
@@ -168,9 +173,9 @@ public class AqueceAlgoritmos implements Cloneable {
 		}
 		if (countMaria > countJoao) {
 			print("Maria");
+			return countMaria;
 		}
 		return countMaria;
-
 	}
 
 	/**
@@ -359,24 +364,16 @@ public class AqueceAlgoritmos implements Cloneable {
 	}
 
 	/**
-	 * Operações simples de soma, média, maior e menor da quantidade solicitada na
-	 * variável qtde.
 	 * 
-	 * @param num2
-	 *            Número 1
-	 * @param num3
-	 *            Número 2
-	 * @param num4
-	 *            Número 3
-	 * @param num5
-	 *            Número 4
-	 * @param qtde
-	 *            quantidade de números envolvidos na operação
 	 */
-	public void exercicio3Calculos(int qtde, double[] numeros) {
-		soma(numeros);
-		media(numeros, qtde);
-		maiorEMenor(numeros);
+	public void exercicio3Calculos(int qtde, String[] numeros) {
+		double[] numDouble = new double[numeros.length];
+		for (int i = 0; i < numeros.length; i++) {
+				numDouble[i]=Double.parseDouble(numeros[i]);
+		}
+		soma(numDouble);
+		media(numDouble, qtde);
+		maiorEMenor(numDouble);
 	}
 
 	private void maiorEMenor(double[] numeros) {
