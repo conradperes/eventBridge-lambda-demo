@@ -1,0 +1,30 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: AWS Serverless Spring Boot 2 API - sparta.planosaude.lambda::planosaude
+Globals:
+  Api:
+    EndpointConfiguration: REGIONAL
+
+Resources:
+  PlanosaudeFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: sparta.planosaude.lambda.StreamLambdaHandler::handleRequest
+      Runtime: java8
+      CodeUri: target/planosaude-1.0-SNAPSHOT.jar
+      MemorySize: 512
+      Policies: AWSLambdaBasicExecutionRole
+      Timeout: 30
+      Events:
+        GetResource:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: any
+
+Outputs:
+  PlanosaudeApi:
+    Description: URL for application
+    Value: !Sub 'https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/students'
+    Export:
+      Name: PlanosaudeApi
