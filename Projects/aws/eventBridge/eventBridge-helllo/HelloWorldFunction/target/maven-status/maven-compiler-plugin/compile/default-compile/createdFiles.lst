@@ -1,0 +1,4 @@
+model/aws/ec2/marshaller/Marshaller.class
+model/aws/ec2/AWSEvent.class
+model/aws/ec2/EC2InstanceStateChangeNotification.class
+helloworld/App.class

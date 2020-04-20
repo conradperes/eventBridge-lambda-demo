@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="accountSettings">
+    <option name="activeProfile" value="profile:production" />
+    <option name="activeRegion" value="sa-east-1" />
+    <option name="recentlyUsedProfiles">
+      <list>
+        <option value="profile:production" />
+        <option value="profile:conrad" />
+        <option value="profile:default" />
+        <option value="profile:eb-cli" />
+      </list>
+    </option>
+    <option name="recentlyUsedRegions">
+      <list>
+        <option value="sa-east-1" />
+      </list>
+    </option>
+  </component>
+</project>
